@@ -1,0 +1,3 @@
+[submodule "billboard-ui/i18n"]
+	path = billboard-ui/i18n
+	url = git://github.com/harmattan/billboard-i18n.git

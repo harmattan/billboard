@@ -1,0 +1,12 @@
+<aegis>
+    <request>
+        <credential name="UID::user" />
+        <credential name="GID::users" />
+        <credential name="GRP::users" />
+        <credential name="GRP::calendar" />
+        <credential name="GRP::metadata-users" />
+        <credential name="TrackerReadAccess" />
+        <credential name="TrackerWriteAccess" />
+        <for path="/opt/billboard/bin/billboardd" />
+    </request>
+</aegis>

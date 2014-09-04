@@ -1,0 +1,10 @@
+--- libsysuid-screenlock-nokia.css.original	2014-01-29 23:28:08.447617211 +0100
++++ libsysuid-screenlock-nokia.css.billboard	2014-01-29 23:28:08.447617211 +0100
+@@ -120,7 +120,6 @@
+     margin-bottom: 0;
+     margin-left: 0;
+     margin-right: 0;
+-    maximum-size: 12mm 12mm;
+ }
+ 
+ LockScreen MImageWidgetStyle#LockScreenLowPowerModeOperatorLogoHidden {

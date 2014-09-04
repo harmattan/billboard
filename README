@@ -1,0 +1,60 @@
+
+    ╔╗ ┬┬  ┬  ┌┐ ┌─┐┌─┐┬─┐┌┬┐
+    ╠╩╗││  │  ├┴┐│ │├─┤├┬┘ ││
+    ╚═╝┴┴─┘┴─┘└─┘└─┘┴ ┴┴└──┴┘
+             Standby Screen
+
+
+   "One of the great things about the Nokia N9 is the AMOLED screen with
+    its low power mode. Unfortunately, it only shows the current time,
+    and not the current date. Billboard is here to fix this - and add
+    some more goodies along the way!"       -- me, circa 2012
+
+
+This is the open source release of my N9 application, Billboard.
+A short overview of the structure of what's inside:
+
+ - billboardd/
+   The daemon source code and all the core code (including formatting,
+   rendering and contextkit/gconf subscription).
+
+ - billboard-ui/
+   The QML UI for the "app", to configure the daemon. Communicates with
+   the daemon via shared GConf keys.
+
+ - css/
+   Stylesheets for making the operator logo not be cropped.
+
+ - debian/
+   Packaging files and postinst/postrm files for patching the stylesheet
+   and installing stuff, as well as aegis files (for organizer/calendar).
+
+ - include/
+   Common configuration key defaults used by both the UI and daemon.
+
+ - rendertest/
+   Desktop GUI utility for testing text formatting and rendering.
+
+
+If you didn't use "git clone --recursive" when closing this Git repo,
+you have to initialize the submodule (to get the translations; this
+does not apply to the source tarball, as it already includes i18n):
+
+    git submodule init
+    git submodule update
+
+
+To build for the N9 in Scratchbox use:
+
+    make -C billboard-ui/i18n release
+    dpkg-buildpackage -rfakeroot -b
+
+
+Useful scripts to be used together with Billboard may be found here:
+
+    https://github.com/harmattan/billboard-scripts
+
+
+License: GNU General Public License, version 3 or later
+Support thread: http://talk.maemo.org/showthread.php?t=84507
+Website: http://thp.io/2012/billboard/

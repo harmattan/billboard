@@ -1,0 +1,25 @@
+#!/bin/sh
+
+TARGET_FILE=/usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css
+
+BACKUP_FILE=/opt/billboard/css/libsysuid-screenlock-nokia.css.backup
+REPLACE_FILE=/opt/billboard/css/libsysuid-screenlock-nokia.css.orginal
+
+if [ -f $BACKUP_FILE ]; then
+    echo "Restoring $BACKUP_FILE:"
+    echo -n " $TARGET_FILE"
+    mv $BACKUP_FILE $TARGET_FILE && echo -e "\tOK"
+else
+    echo "Restoring $REPLACE_FILE:"
+    echo -n " $TARGET_FILE"
+    cp $REPLACE_FILE $TARGET_FILE && echo -e "\tOK"
+fi
+
+# Try to shutdown, but don't fail if billboardd isn't running
+/sbin/stop apps/billboardd || true
+
+# Don't restart sysuid on uninstall - the user will either upgrade
+# (and sysuid will be restarted by the new postinst) or the user will
+# remove the package and in this case, the user can always restart.
+#/sbin/stop xsession/sysuid && /sbin/start xsession/sysuid
+

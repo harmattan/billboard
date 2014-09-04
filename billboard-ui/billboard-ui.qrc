@@ -1,0 +1,17 @@
+<RCC>
+<qresource prefix="/">
+<file>billboard-ui.qml</file>
+<file>logo.png</file>
+<file>SettingsHeader.qml</file>
+<file>LabelAndSwitch.qml</file>
+<file>LooksLikeAComboBox.qml</file>
+<file>i18n/bg.qm</file>
+<file>i18n/da.qm</file>
+<file>i18n/de.qm</file>
+<file>i18n/en.qm</file>
+<file>i18n/hi.qm</file>
+<file>i18n/nl.qm</file>
+<file>i18n/pt.qm</file>
+<file>i18n/zh.qm</file>
+</qresource>
+</RCC>

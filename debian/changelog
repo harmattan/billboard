@@ -1,0 +1,129 @@
+billboard (2.0.0) harmattan; urgency=low
+
+  * Open Source release under the GPLv3
+
+ -- Thomas Perl <m@thp.io>  Thu, 04 Sep 2014 15:06:00 +0100
+
+billboard (1.1.2) harmattan; urgency=low
+
+  * New translations: ru
+  * Updated translations: it
+
+ -- Thomas Perl <m@thp.io>  Sun, 23 Mar 2014 15:04:24 +0100
+
+billboard (1.1.1) harmattan; urgency=low
+
+  * Refreshed icon for the configuration utility
+  * Add UI elements for cell signal strength and bars
+  * Add {short-month} element for Jan, Feb, ...
+  * New translations: el, it, sk
+  * Updated translations: zh
+
+ -- Thomas Perl <m@thp.io>  Thu, 03 Oct 2013 15:35:01 +0200
+
+billboard (1.1.0) harmattan; urgency=low
+
+  * Configuration utility can now insert <<>>, {} and {{}}
+  * Only limit embedded image size when dithering is enabled
+  * Other logos and dithered images can now be up to 200x120 in size
+  * i18n Support in QML configuration utility
+  * New translations: bg, da, de, en, hi, nl, pt, zh
+
+ -- Thomas Perl <m@thp.io>  Mon, 06 May 2013 17:36:46 +0200
+
+billboard (1.0.9) harmattan; urgency=low
+
+  * Fixed MeeCast icon (use <<{meecast-icon-src}>>)
+  * New formatter that supports nested {} expressions
+  * LPM-optimized image dithering for better display quality
+  * Limit size of embedded images to avoid dithering lock-up
+  * Image dithering using <</path/to/image.png#>> (# at end of path)
+
+ -- Thomas Perl <m@thp.io>  Thu, 04 Apr 2013 17:09:04 +0200
+
+billboard (1.0.8) harmattan; urgency=low
+
+  * MeeCast icon display support ({meecast-icon})
+  * Wazapp online status now accessible from GUI
+  * USSD Balance now accessible from GUI
+  * Signal info ({cell-signal-bars} and {cell-signal-strength})
+  * Alarm present info ({alarm-present})
+  * Support for mixing images and text in the same line
+  * Center embedded images vertically (and don't scale them)
+  * Conflits: and Replaces: billboardlite (Demo Version)
+  * Update version information in the QML UI
+
+ -- Thomas Perl <m@thp.io>  Thu, 13 Dec 2012 12:32:03 +0100
+
+billboard (1.0.7) harmattan; urgency=low
+
+  * New rendering engine
+  * Inline color changing ({{red}}, etc...)
+  * Added week number field ({week})
+  * Battery charge support (as graphical bar)
+  * Colored battery bar ({color-battery-bar}, colored when low)
+  * Add support for wazapp online status (Wazapp.Online)
+  * Add support for GConf Key Monitoring and USSD Balance
+  * Add support for showing a battery icon ({battery-icon})
+  * Script output is now interpreted as UTF-8 encoded string
+  * Allow up to 20 lines of text (up from 7 previously)
+
+ -- Thomas Perl <m@thp.io>  Mon, 01 Oct 2012 23:27:09 +0200
+
+billboard (1.0.6) harmattan; urgency=low
+
+  * ContextKit integration with MeeCast
+  * Support for displaying only the month number
+
+ -- Thomas Perl <m@thp.io>  Sat, 01 Sep 2012 10:55:41 +0200
+
+billboard (1.0.5) harmattan; urgency=low
+
+  * Display IP address(es)
+
+ -- Thomas Perl <m@thp.io>  Wed, 01 Aug 2012 03:01:07 +0200
+
+billboard (1.0.4) harmattan; urgency=low
+
+  * Customizable text size
+  * Customizable font family
+
+ -- Thomas Perl <m@thp.io>  Mon, 23 Jul 2012 19:52:09 +0200
+
+billboard (1.0.3) harmattan; urgency=low
+
+  * Fix problems for users who have already upgraded to PR1.3
+
+ -- Thomas Perl <m@thp.io>  Mon, 09 Jul 2012 19:40:18 +0200
+
+billboard (1.0.2) harmattan; urgency=low
+
+  * Use system-aligned timer and update every 30-60 minutes
+    (if no other events take place, this fixes date updates)
+  * Update postinst/prerm and restart sysuid directly
+  * Add support for showing calendar events (today/upcoming)
+  * Add support for more date formatting options (DoM, weekday, ..)
+  * Fixed a problem with center-aligned text and other logos
+
+ -- Thomas Perl <m@thp.io>  Thu, 07 Jun 2012 20:54:23 +0200
+
+billboard (1.0.1) harmattan; urgency=low
+
+  * Override other operator logos (and restore on quit).
+  * Draw other operator logo onto the billboard, too.
+  * Better layout (minimum required size), right-aligned.
+  * Elide text that is too wide for the screen.
+  * Limit other operator logo size to 120x120px.
+  * Option to disable billboard through the UI.
+  * Option to show/hide the other operator logo.
+  * New settings UI.
+  * New text alignment option (left, right center).
+  * More robust replacement of sysuid's .css file.
+
+ -- Thomas Perl <m@thp.io>  Sat, 26 May 2012 15:12:10 +0200
+
+billboard (1.0.0) harmattan; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Perl <m@thp.io>  Mon, 14 May 2012 21:03:31 +0200

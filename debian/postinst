@@ -1,0 +1,21 @@
+#!/bin/sh
+
+TARGET_FILE=/usr/share/themes/base/meegotouch/libsysuid-screenlock-nokia/style/libsysuid-screenlock-nokia.css
+
+BACKUP_FILE=/opt/billboard/css/libsysuid-screenlock-nokia.css.backup
+REPLACE_FILE=/opt/billboard/css/libsysuid-screenlock-nokia.css.billboard
+
+if [ ! -f $BACKUP_FILE ]; then
+    echo "Backing up to $BACKUP_FILE:"
+    echo -n " $TARGET_FILE"
+    cp $TARGET_FILE $BACKUP_FILE && echo -e "\tOK"
+fi
+
+echo "Installing $REPLACE_FILE:"
+echo -n " $TARGET_FILE"
+cp $REPLACE_FILE $TARGET_FILE && echo -e "\tOK"
+
+/sbin/stop xsession/sysuid && /sbin/start xsession/sysuid
+
+/sbin/start apps/billboardd
+
