@@ -29,6 +29,9 @@ HEADERS += dithering.h
 SOURCES += network.cc
 HEADERS += network.h
 
+SOURCES += tklockinterface.cc
+HEADERS += tklockinterface.h
+
 SOURCES += volumeinterface.cc
 HEADERS += volumeinterface.h
 

@@ -33,6 +33,7 @@ QTM_USE_NAMESPACE
 #include "gconfmon.h"
 #include "organizer.h"
 #include "network.h"
+#include "tklockinterface.h"
 #include "volumeinterface.h"
 #include "batteryicon.h"
 
@@ -71,6 +72,7 @@ class Daemon : public QObject {
               context(NULL),
               gconfmon(NULL),
               organizer(),
+              tklock(),
               volume(),
               updateTimer(),
               sysAlignedTimer(),
@@ -128,6 +130,9 @@ class Daemon : public QObject {
             QObject::connect(&sysAlignedTimer, SIGNAL(timeout()),
                     this, SLOT(sysAlignedUpdate()));
 
+            QObject::connect(&tklock, SIGNAL(locked()),
+                    this, SLOT(contextChanged()));
+
             enabledChanged();
             textChanged();
             render(true);
@@ -157,6 +162,7 @@ class Daemon : public QObject {
         Context *context;
         GConfMonitor *gconfmon;
         Organizer organizer;
+        TklockInterface tklock;
         VolumeInterface volume;
 
         QTimer updateTimer;
