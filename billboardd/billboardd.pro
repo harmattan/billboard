@@ -13,9 +13,12 @@ INCLUDEPATH += .
 CONFIG += link_pkgconfig
 PKGCONFIG += gq-gconf contextsubscriber-1.0
 
+DBUS_ADAPTORS += dbusbillboard.xml
+
 SOURCES += billboardd.cc
 SOURCES += organizer.cc
 HEADERS += daemon.h
+HEADERS += dbusbillboard.h
 HEADERS += context.h
 HEADERS += gconfmon.h
 HEADERS += batteryicon.h

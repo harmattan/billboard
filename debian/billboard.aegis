@@ -1,4 +1,17 @@
 <aegis>
+    <provide>
+        <credential name="control" />
+        <credential name="access" />
+        <dbus name="io.thp.billboard" own="control" bus="session">
+            <node name="/">
+                <interface name="io.thp.billboard">
+                    <method name="render">
+                        <annotation name="com.maemo.Aegis" value="access"/>
+                    </method>
+                </interface>
+            </node>
+        </dbus>
+    </provide>
     <request>
         <credential name="UID::user" />
         <credential name="GID::users" />

@@ -18,18 +18,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **/
 
+#include <QDBusConnection>
 #include <QtGui>
 #include <signal.h>
 
 #include "daemon.h"
+#include "dbusbillboard.h"
+#include "dbusbillboard_adaptor.h"
 
+#define DBUS_SERVICE "io.thp.billboard"
 #define DATA_DIR "io.thp.billboardd-cache/"
 
 static QApplication *app = NULL;
 static Daemon *billboardd = NULL;
+static DbusBillboard *dbus = NULL;
 
 void terminate_gracefully(int) {
     delete billboardd;
+    delete dbus;
     app->quit();
 }
 
@@ -46,6 +52,13 @@ int main(int argc, char *argv[])
     }
 
     billboardd = new Daemon(temp.filePath(DATA_DIR));
+
+    dbus = new DbusBillboard();
+    new BillboardAdaptor(dbus);
+    QDBusConnection::sessionBus().registerService(DBUS_SERVICE);
+    QDBusConnection::sessionBus().registerObject("/", dbus);
+
+    QObject::connect(dbus, SIGNAL(onRender()), billboardd, SLOT(contextChanged()));
 
     signal(SIGINT, terminate_gracefully);
     signal(SIGTERM, terminate_gracefully);
