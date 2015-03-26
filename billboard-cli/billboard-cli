@@ -1,0 +1,40 @@
+#!/bin/bash
+
+DBUS_SERVICE="io.thp.billboard"
+DBUS_PATH="/"
+
+main() {
+  if [ $# != 1 ]; then
+    usage
+    exit 1
+  fi
+  case $1 in
+    -r|--render)
+    dbus_send "render"
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+  esac
+}
+
+dbus_send() {
+  method="$1"
+  dbus-send \
+    --session \
+    --print-reply \
+    --dest="$DBUS_SERVICE" \
+    "$DBUS_PATH" \
+    io.thp.billboard."$method"
+}
+
+usage() {
+  echo -n "Usage: $(basename $0) COMMAND
+
+COMMAND:
+  -r, --render     Redraw the contents of the standby screen
+"
+}
+
+main "$@"
