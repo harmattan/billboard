@@ -2,7 +2,7 @@
 # Create source tarball from current source tree
 
 APP=billboard
-VERSION=2.0.0
+VERSION=2.0.1
 OUTFILE=${APP}-${VERSION}.tar.gz
 
 tar -czvf $OUTFILE \

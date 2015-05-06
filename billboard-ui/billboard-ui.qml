@@ -373,7 +373,7 @@ PageStackWindow {
                 }
 
                 Label {
-                    text: 'Billboard 2.0.0'
+                    text: 'Billboard 2.1.0'
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: 30
                 }

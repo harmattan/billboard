@@ -1,3 +1,12 @@
+billboard (2.0.1) harmattan; urgency=low
+
+  * i18n: Updated translations from billboard-i18n
+  * tklock: call contextChanged() on tklock dbus event
+  * dbus: interface to implement 'qdbus io.thp.billboard / render'
+  * billboard-cli: install a wrapper around dbus-send
+
+ -- Thomas Perl <m@thp.io>  Wed, 06 May 2015 15:33:10 +0200
+
 billboard (2.0.0) harmattan; urgency=low
 
   * Open Source release under the GPLv3
