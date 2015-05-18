@@ -55,8 +55,12 @@ int main(int argc, char *argv[])
 
     dbus = new DbusBillboard();
     new BillboardAdaptor(dbus);
-    QDBusConnection::sessionBus().registerService(DBUS_SERVICE);
-    QDBusConnection::sessionBus().registerObject("/", dbus);
+    QDBusConnection dbusConnection = QDBusConnection::sessionBus();
+    if (dbusConnection.registerService(DBUS_SERVICE)) {
+        QDBusConnection::sessionBus().registerObject("/", dbus);
+    } else {
+        qCritical() << dbusConnection.lastError().message();
+    }
 
     QObject::connect(dbus, SIGNAL(onRender()), billboardd, SLOT(contextChanged()));
 
