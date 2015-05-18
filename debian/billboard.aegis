@@ -13,6 +13,7 @@
         </dbus>
     </provide>
     <request>
+        <credential name="control" />
         <credential name="UID::user" />
         <credential name="GID::users" />
         <credential name="GRP::users" />
@@ -21,5 +22,9 @@
         <credential name="TrackerReadAccess" />
         <credential name="TrackerWriteAccess" />
         <for path="/opt/billboard/bin/billboardd" />
+    </request>
+    <request>
+        <credential name="access" />
+        <for path="/opt/billboard/bin/billboard-cli" />
     </request>
 </aegis>
