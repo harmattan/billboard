@@ -1,3 +1,11 @@
+billboard (2.2.0) harmattan; urgency=low
+
+  * [Elliot Wolk] aegis: Add D-Bus credentials (billboardd, billboard-cli)
+  * [Elliot Wolk] dbus: Print message when D-Bus service registration fails
+  * [Thomas Perl] Releasing: Read all version numbers from debian/changelog
+
+ -- Thomas Perl <m@thp.io>  Wed, 08 Jul 2015 10:04:00 +0200
+
 billboard (2.0.1) harmattan; urgency=low
 
   * i18n: Updated translations from billboard-i18n

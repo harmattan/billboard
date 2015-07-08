@@ -7,6 +7,8 @@ TEMPLATE = app
 DEPENDPATH += .
 INCLUDEPATH += .
 
+INCLUDEPATH += ../include
+
 CONFIG += link_pkgconfig
 PKGCONFIG += gq-gconf
 
@@ -26,3 +28,6 @@ desktop.files = billboard-ui.desktop
 INSTALLS += desktop
 
 RESOURCES += billboard-ui.qrc
+
+# Build translation files
+system(make -C i18n release)

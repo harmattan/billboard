@@ -1,14 +1,8 @@
 #!/bin/sh
-# Create source tarball from current source tree
+# Create source tarball from Git tag
 
 APP=billboard
-VERSION=2.0.1
+VERSION=$(LC_ALL=C dpkg-parsechangelog | grep Version: | cut -d' ' -f2-)
 OUTFILE=${APP}-${VERSION}.tar.gz
 
-tar -czvf $OUTFILE \
-    --xform "s#^#${APP}-${VERSION}/#g" \
-    --exclude=.git \
-    --exclude=.gitmodules \
-    --exclude=release.sh \
-    --exclude=$OUTFILE \
-    *
+git archive --format=tar --prefix=$APP-$VERSION/ $VERSION | gzip -9 >$OUTFILE

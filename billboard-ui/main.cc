@@ -22,6 +22,7 @@
 #include <QtDeclarative>
 
 #include "controller.h"
+#include "version.h"
 
 int main(int argc, char *argv[])
 {
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
 
     QDeclarativeView view;
     view.rootContext()->setContextProperty("controller", &controller);
+    view.rootContext()->setContextProperty("billboardVersion", QString(BILLBOARD_VERSION));
     view.setSource(QUrl("qrc:/billboard-ui.qml"));
     view.showFullScreen();
 

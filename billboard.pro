@@ -8,3 +8,6 @@ INSTALLS += css
 cli.path = /opt/billboard/bin
 cli.files = billboard-cli/billboard-cli
 INSTALLS += cli
+
+# Update version numbers
+system(sh version.sh)
